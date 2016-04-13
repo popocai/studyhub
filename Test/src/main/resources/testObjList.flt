@@ -1,0 +1,26 @@
+    Data
+
+<#list list as obj>
+    Name : ${obj.name}, Age : ${obj.age}
+</#list>
+
+
+<#list constraint?keys as key>
+    ${key}
+    <#list constraint[key] as d>
+        val : ${d}
+        
+        <#list list as obj>
+            <#if obj.age == d>
+            Name : ${obj.name}, Age : ${obj.age}
+            
+ 
+            </#if>
+        
+            
+        </#list>
+        
+    </#list>    
+    
+    
+</#list>

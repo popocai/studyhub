@@ -1,0 +1,20 @@
+Your Vehicle is suspected stolen. 
+<#if (additionalVehicleStatus)??>Status:
+<#-- door -->
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorOpenStatusDriver)?? >Door Driver:Open</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorOpenStatusPassenger)?? >Door Passenger:Open</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorOpenStatusDriverRear)?? >Door Driver Rear:Open</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorOpenStatusPassengerRear)?? >Door Passenger Rear:Open</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorLockStatusDriver)?? >Door Driver:Unlocked</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorLockStatusPassenger)?? >Door Passenger:Unlocked</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorLockStatusDriverRear)?? >Door Driver Rear:Unlocked</#if>
+<#if (additionalVehicleStatus.drivingSafetyStatus.doorLockStatusPassengerRear)?? >Door Passenger Rear:Unlocked</#if>
+<#-- Trunk -->
+<#if (additionalVehicleStatus.drivingSafetyStatus.trunkOpenStatus)?? >Truck:Open</#if>
+<#-- window -->
+<#if (additionalVehicleStatus.climateStatus.winStatusDriver)?? >Window Driver:Open</#if>
+<#if (additionalVehicleStatus.climateStatus.winStatusPassenger)?? >Window Passenger:Open</#if>
+<#if (additionalVehicleStatus.climateStatus.winStatusDriverRear)?? >Window Driver Rear:Open</#if>
+<#if (additionalVehicleStatus.climateStatus.winStatusPassengerRear)?? >Window Passenger Rear:Open</#if>
+<#if (additionalVehicleStatus.climateStatus.sunroofOpenStatus)?? >Sun roof:Open</#if>     
+</#if>

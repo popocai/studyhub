@@ -1,0 +1,12 @@
+
+
+<#if priceA?? & priceB??>
+
+    <#if priceA < priceB>
+                 好便宜
+    <#else>
+                好贵
+    </#if> 
+<#else>
+    No price
+</#if>
