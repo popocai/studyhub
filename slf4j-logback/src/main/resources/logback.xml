@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+	<property name="LOG_HOME" value="logs" />
+	<property name="LOG_FILE_NAME" value="my.log" />
+	<property name="PATTERN" value="[%d][%t][%-5p][%F:%L]-%m%n" />
+
+	<appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LOGFILE_BY_DAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/${LOG_FILE_NAME}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/${LOG_FILE_NAME}.%d{yyyyMMdd}.zip</fileNamePattern>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="LOGFILE_BY_SIZE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_HOME}/${LOG_FILE_NAME}</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/${LOG_FILE_NAME}.%i</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>300</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>100MB</maxFileSize>
+		</triggeringPolicy>
+
+		<encoder>
+			<pattern>${PATTERN}</pattern>
+		</encoder>
+	</appender>
+
+	<root level="WARN">
+		<appender-ref ref="ConsoleAppender" />
+		<appender-ref ref="LOGFILE_BY_SIZE" />
+	</root>
+
+	<logger name="com.ericsson" additivity="false" level="TRACE" >
+		<appender-ref ref="ConsoleAppender" />
+		<appender-ref ref="LOGFILE_BY_SIZE" />
+	</logger>
+
+</configuration>

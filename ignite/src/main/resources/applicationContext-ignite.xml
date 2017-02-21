@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Command line (default) ignite configuration. -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <description>Main Spring file for ignite configuration.</description>
+
+    <!-- Example of bean definition with given configuration. -->
+    <bean id="ignite" class="org.apache.ignite.IgniteSpringBean">
+        <property name="configuration">
+            <bean id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+                <property name="peerClassLoadingEnabled" value="false" />
+                <!-- Enable client mdoe. -->
+                <property name="clientMode" value="true" />
+                <property name="cacheConfiguration">
+                    <list>
+                        <!-- Partitioned cache example configuration (Atomic mode). -->
+                        <ref bean="sqlCache" />
+                    </list>
+                </property>
+
+                <!-- Enable task execution events for examples. -->
+                <property name="includeEventTypes">
+                    <list>
+                        <util:constant static-field="org.apache.ignite.events.EventType.EVT_CACHE_OBJECT_EXPIRED" />
+                    </list>
+                </property>
+
+                <!-- Explicitly configure TCP discovery SPI to provide list of initial nodes. -->
+                <property name="discoverySpi">
+                    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
+                        <property name="ipFinder">
+                            <!-- Uncomment static IP finder to enable static-based discovery of initial nodes. -->
+                            <!--<bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder"> -->
+                            <bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.multicast.TcpDiscoveryMulticastIpFinder">
+                                <property name="addresses">
+                                    <list>
+                                        <!-- In distributed environment, replace with actual host IP address. -->
+                                        <value>127.0.0.1:47500..47509</value>
+                                    </list>
+                                </property>
+                            </bean>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="lruEvictionPolicy" class="org.apache.ignite.cache.eviction.lru.LruEvictionPolicy">
+        <property name="maxSize" value="50000" />
+    </bean>
+
+    <bean id="sqlCache" class="org.apache.ignite.configuration.CacheConfiguration">
+        <property name="name" value="sql" />
+        <property name="atomicityMode" value="ATOMIC" />
+        <property name="cacheMode" value="PARTITIONED" />
+        <!-- Number of backup nodes. -->
+        <property name="backups" value="1" />
+        <!-- Configure expiry policy. -->
+        <property name="expiryPolicyFactory">
+            <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+                <property name="targetClass" value="javax.cache.expiry.ModifiedExpiryPolicy" />
+                <property name="targetMethod" value="factoryOf" />
+                <property name="arguments">
+                    <!-- <bean class="javax.cache.expiry.Duration"> <constructor-arg type="java.util.concurrent.TimeUnit"> 
+                        <value>HOURS</value> </constructor-arg> <constructor-arg type="long"> <value>24</value> </constructor-arg> </bean> -->
+
+                    <bean class="javax.cache.expiry.Duration">
+                        <constructor-arg type="java.util.concurrent.TimeUnit">
+                            <value>SECONDS</value>
+                        </constructor-arg>
+                        <constructor-arg type="long">
+                            <value>10</value>
+                        </constructor-arg>
+                    </bean>
+
+                </property>
+            </bean>
+        </property>
+        <!-- Store cache entries on-heap. -->
+        <property name="memoryMode" value="ONHEAP_TIERED" />
+        <!-- Enable Off-Heap memory with max size of xxx byte (0 for unlimited). -->
+        <property name="offHeapMaxMemory" value="#{10 * 1024L}" />
+        <!-- Enable swap. -->
+        <property name="swapEnabled" value="true" />
+        <!-- Configure eviction policy. -->
+        <property name="evictionPolicy">
+            <!-- LRU eviction policy. -->
+            <ref bean="lruEvictionPolicy" />
+        </property>
+
+        <property name="queryEntities">
+            <list>
+                <bean class="org.apache.ignite.cache.QueryEntity">
+                    <property name="keyType" value="java.lang.String" />
+                    <property name="valueType" value="org.patrick.learn.ignite.sql.CspSignal" />
+
+                    <property name="fields">
+                        <map>
+                            <entry key="vdsField" value="java.lang.String" />
+                            <entry key="vehicleModelCode" value="java.lang.String" />
+                            <entry key="canSignalValue" value="java.lang.Integer" />
+                        </map>
+                    </property>
+
+                </bean>
+            </list>
+        </property>
+
+
+    </bean>
+
+</beans>
