@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_CONNECT_TIMEOUT=20000
+org.eclipse.jdt.launching.PREF_DEFAULT_ENVIRONMENTS_XML=
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1469496023674" defaultVMConnector\="">\r\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n<vm id\="1469496023674" name\="jdk1.8.0_60" path\="C\:\\Drive_Work\\program\\Java\\jdk1.8.0_60"/>\r\n<vm id\="1469496027497" name\="jdk1.7.0_71" path\="C\:\\Drive_Work\\program\\Java\\jdk1.7.0_71"/>\r\n<vm id\="1469496043300" name\="jdk1.6.0_30" path\="C\:\\Drive_Work\\program\\Java\\jdk1.6.0_30"/>\r\n</vmType>\r\n</vmSettings>\r\n
+org.eclipse.jdt.launching.only_include_exported_classpath_entries=false

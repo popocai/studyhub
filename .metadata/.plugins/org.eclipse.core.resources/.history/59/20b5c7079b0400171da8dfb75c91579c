@@ -1,0 +1,25 @@
+/*------------------------------------------------------------------------------
+ * COPYRIGHT Ericsson 2017
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *----------------------------------------------------------------------------*/
+package cassandra;
+
+import com.datastax.driver.core.Cluster;
+import com.datastax.driver.core.ResultSet;
+import com.datastax.driver.core.Session;
+
+public class Read_Data {
+    public static void 打印() {
+        System.out.println("我去. 这都行");
+    }
+
+    public static void main(String args[]) throws Exception {
+        打印();
+
+    }
+}

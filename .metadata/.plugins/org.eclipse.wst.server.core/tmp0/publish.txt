@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu May 12 10:19:14 CST 2016
+org.eclipse.jst.j2ee.server\:ignite=C\:\\Drive_Work\\program\\servers\\tomcat\\apache-tomcat-8.0.32\\wtpwebapps\\ignite
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\ECAIYAG\\.m2\\repository\\org\\springframework\\spring-web\\3.2.9.RELEASE\\spring-web-3.2.9.RELEASE.jar=C\:\\Drive_Work\\program\\servers\\tomcat\\apache-tomcat-8.0.32\\wtpwebapps\\ignite\\WEB-INF\\lib\\spring-web-3.2.9.RELEASE.jar

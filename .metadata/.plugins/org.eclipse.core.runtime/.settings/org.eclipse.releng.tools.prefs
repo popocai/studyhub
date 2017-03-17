@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.eclipse.releng.tools.copyrightTemplate=COPYRIGHT Ericsson 2015\n\nThe copyright to the computer program(s) herein is the property of\nEricsson Inc. The programs may be used and/or copied only with written\npermission from Ericsson Inc. or in accordance with the terms and\nconditions stipulated in the agreement/contract under which the\nprogram(s) have been supplied.
+org.eclipse.releng.tools.useDefaultRevisionYear=true

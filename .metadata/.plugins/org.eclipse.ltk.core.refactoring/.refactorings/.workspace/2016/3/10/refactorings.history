@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;httpBasicAuth&apos; to &apos;testsuitdownload&apos;&#x0D;&#x0A;- Original element: &apos;httpBasicAuth&apos;&#x0D;&#x0A;- Renamed element: &apos;httpBasicAuth&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;httpBasicAuth&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=httpBasicAuth" name="testsuitdownload" references="true" stamp="1456907978385" version="1.0"/>
+</session>

@@ -1,0 +1,8 @@
+INDEX VERSION 1.3+C:\Drive_Work\Workspaces\studyhub\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1593354188.index
+1234496368.index
+2151421468.index
+125273412.index
+2129809830.index
+1866106089.index
+1761077901.index

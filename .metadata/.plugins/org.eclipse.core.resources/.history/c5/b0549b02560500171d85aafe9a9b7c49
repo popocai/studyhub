@@ -1,0 +1,21 @@
+/*------------------------------------------------------------------------------
+ * COPYRIGHT Ericsson 2017
+ *
+ * The copyright to the computer program(s) herein is the property of
+ * Ericsson Inc. The programs may be used and/or copied only with written
+ * permission from Ericsson Inc. or in accordance with the terms and
+ * conditions stipulated in the agreement/contract under which the
+ * program(s) have been supplied.
+ *----------------------------------------------------------------------------*/
+package gc;
+
+public class PrintGCTest {
+    public static void main(String[] args) {
+        byte[] b = null;
+        long s = System.currentTimeMillis();
+        for (int i = 0; i < 10; i++) {
+            b = new byte[1 * 1024 * 1024];
+        }
+        System.out.println(System.currentTimeMillis()-s);
+    }
+}

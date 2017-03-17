@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;classloader&apos; to &apos;anotherClasspath&apos;&#x0D;&#x0A;- Original project: &apos;code_fragment&apos;&#x0D;&#x0A;- Destination element: &apos;anotherClasspath&apos;&#x0D;&#x0A;- Original element: &apos;code_fragment/src/classloader&apos;" description="Copy package" element1="/src&lt;classloader" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1489373126328" target="/code_fragment/anotherClasspath" version="1.0"/>
+</session>
