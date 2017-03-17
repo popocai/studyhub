@@ -9,20 +9,23 @@
  *----------------------------------------------------------------------------*/
 
 public class VolatileKeyWordTest extends Thread {
-    private volatile
+    private
+    //volatile
     boolean stop = false;
 
     public void stopMe() {
+        System.out.println(Thread.currentThread().getName() + " StopMe");
         stop = true;
     }
 
     @Override
     public void run() {
+        System.out.println(Thread.currentThread().getName() + " Run");
         int i = 0;
         while (!stop) {
             i++;
         }
-        System.out.println("I'm stopped : " + i);
+        System.out.println(Thread.currentThread().getName() + " I'm stopped : " + i);
     }
 
     public static void main(String[] args) throws Exception {

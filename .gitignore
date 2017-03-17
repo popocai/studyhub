@@ -1,11 +1,10 @@
-**/.project
+
 **/.idea
 **/*.iml
 **/target
 /target/
-**/.settings
-**/.classpath
+
 **/logs
 ../doc
-**/.metadata
+**/metadata
 **/.recommenders
