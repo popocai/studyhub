@@ -6,5 +6,5 @@
 
 **/logs
 ../doc
-**/metadata
+**/.metadata
 **/.recommenders
