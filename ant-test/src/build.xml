@@ -1,0 +1,36 @@
+<project name="project" default="remote-tomcat-start" basedir=".">
+    <property name="host.name" value="131.1.2.217" />
+    <property name="user.name" value="root" />
+    <property name="password" value="admin" />
+    <property name="tomcat.home" value="/home/apache-tomcat-6.0.18" />
+    <property name="sleep.time" value="10" />
+
+    <property name="lenient" value="true" />
+    <property name="flexlib" location="${FLEX_HOME}/frameworks" />
+
+
+    <target name="clean" description="Cleans">
+        <delete dir="${OUTPUT_DIR}" />
+        <echo>clean ${OUTPUT_DIR}</echo>
+    </target>
+
+    <target name="scp">
+        <scp file="build/workflow.war" trust="true" username="${user.name}" password="${password}" todir="${user.name}@${host.name}:${tomcat.home}/webapps" />
+    </target>
+
+    <target name="sshexe">
+        <sshexec host="${host.name}" username="${user.name}" password="${password}" command="${tomcat.home}/bin/shutdown.sh" trust="true" />
+        <sleep seconds="${sleep.time}" />
+    </target>
+
+    <target name="remote-tomcat-start" depends="sshexe,scp">
+        <sshexec host="${host.name}" username="${user.name}" password="${password}" command="${tomcat.home}/bin/startup.sh" trust="true" />
+        <sleep seconds="${sleep.time}" />
+    </target>
+</project>
+
+<!--
+    <sshexec host="${host.name}" username="${user.name}" password="${password}" trust="true" 
+    command="source /etc/profile; sudo -u root hadoop jar ${remote.home/jar.jar} ${main.class   }"  />
+    
+ -->

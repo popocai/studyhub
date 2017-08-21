@@ -8,7 +8,12 @@
  * program(s) have been supplied.
  *----------------------------------------------------------------------------*/
 
-
+/**
+ * 栈分配
+ * - 小对象(一般几十个bytes), 在没有逃逸(非线程私用)的情况下, 可以直接分配在栈上
+ * - 直接分配在栈上, 可以自动回收, 减轻GC压力
+ * - 大对象或者逃逸对象无法栈上分配
+ */
 public class AllocatOnStack {
     public static void alloc() {
         byte[] b = new byte[2];
@@ -26,7 +31,7 @@ public class AllocatOnStack {
     }
 
     /*
-     * 1. -server -Xmx10m -Xms10m -XX:+DoEscapeAnalysis -XX:+PrintGC 
+     * 1. -server -Xmx10m -Xms10m -XX:+DoEscapeAnalysis -XX:+PrintGC
      * 2. -server -Xmx10m -Xms10m -XX:-DoEscapeAnalysis -XX:+PrintGC
      */
 }
