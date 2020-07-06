@@ -7,8 +7,10 @@
 </head>
 <body>
 
-<form action="https://login.microsoftonline.com/patrickcai.onmicrosoft.com/oauth2/authorize" method="get">
-	Client ID : <input type="text" name="client_id" value="c104f47d-de84-44cd-8631-901dc33635c1" /> <br/>
+<h1>Code</h1>
+
+<form action="https://pcb2c.b2clogin.com/pcb2c.onmicrosoft.com/B2C_1_g1/oauth2/v2.0/authorize?" method="get">
+	Client ID : <input type="text" name="client_id" value="20625ea4-6f61-4bb7-9bda-d0d52637eccd" /> <br/>
 	Response Type : <input type="text" name="response_type" value="code" /> <br/>
 	Redirect URI : <input type="text" name="redirect_uri" value="http://localhost:8080/callback" /> <br/>
 	Scope : <input type="text" name="scope" value="openid" /> <br/>
@@ -16,7 +18,19 @@
 	Nonce : <input type="text" name="nonce" value="123abc" /> <br/>
 	
 	<input type="submit" value="submit" /> <br/>
+</form>
 
+
+<h1>implicit</h1>
+<form action="https://pcb2c.b2clogin.com/pcb2c.onmicrosoft.com/B2C_1_g1/oauth2/v2.0/authorize?" method="get">
+	Client ID : <input type="text" name="client_id" value="20625ea4-6f61-4bb7-9bda-d0d52637eccd" /> <br/>
+	Response Type : <input type="text" name="response_type" value="id_token" /> <br/>
+	Redirect URI : <input type="text" name="redirect_uri" value="http://localhost:8080/callback" /> <br/>
+	Scope : <input type="text" name="scope" value="openid offline_access" /> <br/>
+	State : <input type="text" name="state" value="abc123" /> <br/>
+	Nonce : <input type="text" name="nonce" value="123abc" /> <br/>
+	
+	<input type="submit" value="submit" /> <br/>
 </form>
 
 
