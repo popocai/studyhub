@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPEN ID Connect Test</title>
+</head>
+<body>
+
+Returns: <br/>
+
+<p th:text="${sb}">name</p>
+
+<form action="https://login.microsoftonline.com/patrickcai.onmicrosoft.com/oauth2/v2.0/token" method="post">
+	Code : <input type="text" name="code" th:value="${code}" />
+	<p/>
+	Client ID : <input type="text" name="client_id" value="c104f47d-de84-44cd-8631-901dc33635c1" /> <br/>
+	Client Secret : <input type="text" name="client_secret" value="i_pUCezwqe7K2j-e85O_jKfbss0_g-.4U5" /> <br/>
+	grant_type : <input type="text" name="grant_type" value="authorization_code" /> <br/>
+	Scope : <input type="text" name="scope" value="openid" /> <br/>
+	redirect_uri : <input type="text" name="redirect_uri" value="http://localhost:8080/myapp" /> <br/>
+	
+	<input type="submit" value="submit" /> <br/>
+
+</form>
+
+
+</body>
+</html>

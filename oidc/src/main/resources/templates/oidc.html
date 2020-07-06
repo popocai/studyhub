@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OPEN ID Connect Test</title>
+</head>
+<body>
+
+<form action="https://login.microsoftonline.com/patrickcai.onmicrosoft.com/oauth2/authorize" method="get">
+	Client ID : <input type="text" name="client_id" value="c104f47d-de84-44cd-8631-901dc33635c1" /> <br/>
+	Response Type : <input type="text" name="response_type" value="code" /> <br/>
+	Redirect URI : <input type="text" name="redirect_uri" value="http://localhost:8080/callback" /> <br/>
+	Scope : <input type="text" name="scope" value="openid" /> <br/>
+	State : <input type="text" name="state" value="abc123" /> <br/>
+	Nonce : <input type="text" name="nonce" value="123abc" /> <br/>
+	
+	<input type="submit" value="submit" /> <br/>
+
+</form>
+
+
+</body>
+</html>
