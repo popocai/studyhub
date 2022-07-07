@@ -11,7 +11,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<SPRING-VERSION>3.1.1.RELEASE</SPRING-VERSION>
+		<SPRING-VERSION>3.2.5.RELEASE</SPRING-VERSION>
 		<JUNIT-VERSION>4.10</JUNIT-VERSION>
 		<SLF4J-VERSION>1.7.10</SLF4J-VERSION>
 	</properties>
