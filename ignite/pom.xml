@@ -10,7 +10,7 @@
         <ignite.version>1.5.0.final</ignite.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skip_maven_deploy>true</skip_maven_deploy>
-        <spring.version>3.2.9.RELEASE</spring.version>
+        <spring.version>3.2.18.RELEASE</spring.version>
         <dubbox.version>2.8.4-SNAPSHOT</dubbox.version>
         <zkclient_version>0.1</zkclient_version>
         <httpclient_version>4.2.1</httpclient_version>
