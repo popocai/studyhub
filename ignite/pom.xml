@@ -30,7 +30,7 @@
 
         <javassist_version>3.15.0-GA</javassist_version>
         <zookeeper_version>3.4.6</zookeeper_version>
-        <hibernate.version>4.2.9.Final</hibernate.version>
+        <hibernate.version>5.3.20.Final</hibernate.version>
         <hwa.version>15.0.3</hwa.version>
         <jboss_version>3.0.7.Final</jboss_version>
         <ignite_version>1.5.0.final</ignite_version>
