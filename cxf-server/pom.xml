@@ -9,7 +9,7 @@
 
 	<properties>
 		<cxf.version>3.1.4</cxf.version>
-		<spring.version>3.2.9.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<jetty.version>9.2.11.v20150529</jetty.version>
 	</properties>
 
